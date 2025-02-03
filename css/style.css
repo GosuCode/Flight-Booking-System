@@ -1,0 +1,436 @@
+/* --text: #010819;
+--background: #edf1ff;
+--primary: #0a3df8;
+--secondary: #fb6be7;
+--accent: #fa3c8f; */
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #010819;
+    background-color: #edf1ff;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:active,
+  a:hover {
+    outline: 0;
+  }
+
+.primary-button {
+    background-color: #0a3df8;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+    background-color: #1847f2;
+}
+
+.secondary-button {
+    background-color: #f1c8f8;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.secondary-button:hover {
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a3df8;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.logo a {
+    color: white;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown button {
+  background-color: #f1c8f8;
+  color: black;
+  padding: 4px 12px;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #e1e5f3;
+  min-width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  
+/* Register Container */
+.form-wrapper {
+    margin: 80px 10px;
+    padding: 20px;
+    height: 50vh;
+    align-items: center;
+}
+
+/* Message Styles */
+.error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: green;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Form Styles */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.register-form input {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-form input {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .register-wrapper {
+        padding: 15px;
+        max-width: 100%;
+    }
+}
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #e1e5f3;
+    color: #010819;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 12px;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-logo .logo {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-text {
+    margin: 10px 0;
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .footer-links li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links li a:hover {
+    color: #ddd;
+  }
+  
+  .footer-social img {
+    margin: 20px 0;
+    height: 24px;
+    width: 24px;
+  }
+  
+  .social-icon {
+    color: #010819;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: #ddd;
+  }
+  
+  .footer-contact p {
+    margin: 10px 0;
+  }
+  
+  .footer-contact a {
+    color: #010819;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-contact a:hover {
+    color: #0a3df8;
+  }
+  
+
+  /* Carousel */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images {
+    display: flex;
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transform: translateY(-50%);
+}
+
+.carousel button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Page Title */
+.page-title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Profile Update Container */
+.profile-update-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+.update-profile-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.update-profile-form .form-group {
+    margin-bottom: 20px;
+}
+
+.update-profile-form label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.update-profile-form .form-input {
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.update-profile-form .form-input:focus {
+    border: 1px solid #0a3df8;
+    outline: none;
+}
+
+/* Success Message */
+.success-message {
+    color: green;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Success Message Styling (optional) */
+.success-message {
+    background-color: #eaf5e0;
+    color: #0a3df8;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #0a3df8;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .update-profile-form {
+        padding: 20px;
+    }
+
+    .update-profile-form .form-input, .primary-button {
+        font-size: 14px;
+    }
+}
+
