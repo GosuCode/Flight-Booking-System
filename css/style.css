@@ -11,7 +11,7 @@ body {
     color: #010819;
     background-color: #edf1ff;
 }
-
+h1,
 h2{
   text-align: center;
 }
@@ -33,11 +33,12 @@ a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;}
 
 .primary-button:hover {
     background-color: #1847f2;
+    box-shadow: 0px 5px 15px rgba(24, 71, 242, 0.3);
+    transform: translateY(-2px);
 }
 
 .secondary-button {
@@ -52,6 +53,7 @@ a {
 }
 
 .secondary-button:hover {
+  background-color: #eaaef5;
 }
 
 /* Navbar Styling */
@@ -59,14 +61,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0a3df8;
-    padding: 10px 20px;
+    background: #edf1ff;
+    padding: 0 20px;
     border-radius: 8px;
 }
 
 .logo a {
-    color: white;
+    color: #010819;
     margin: 0;
+}
+
+.logo img{
+  width: 25px;
 }
 
 .nav-links {
@@ -76,11 +82,18 @@ nav {
 }
 
 .nav-links li {
+    display: flex;
     margin: 0 15px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.nav-links a img {
+  width: 16px;
 }
 
 .nav-links a {
-    color: white;
+    color: #010819;
     text-decoration: none;
     font-size: 16px;
 }
@@ -108,6 +121,7 @@ nav {
   position: absolute;
   background-color: #e1e5f3;
   min-width: 150px;
+  right: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   z-index: 1;
@@ -120,6 +134,7 @@ nav {
 }
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  text-decoration: none;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -128,9 +143,9 @@ nav {
   
 /* Register Container */
 .form-wrapper {
-    margin: 80px 10px;
+    margin: 20px 10px;
     padding: 20px;
-    height: 50vh;
+    height: fit-content;
     align-items: center;
 }
 
@@ -143,10 +158,10 @@ nav {
 }
 
 .success-message {
-    color: green;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 10px;
+  color: green;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 /* Form Styles */
@@ -211,83 +226,149 @@ nav {
 
 
 
-
 /* Footer Styles */
 footer {
-    background-color: #e1e5f3;
-    color: #010819;
-    padding: 20px 0;
-    text-align: center;
-    border-radius: 12px;
-  }
-  
+  background-color: #e1e5f3;
+  color: #010819;
+  padding: 40px 0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Logo Section */
+.footer-logo .logo h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.footer-logo .logo span img {
+  width: 40px;
+  height: auto;
+  margin-left: 10px;
+}
+
+/* Footer Text */
+.footer-text {
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+/* Footer Links Section */
+.footer-links {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.footer-links div {
+  flex: 1;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.footer-links h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.footer-links ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+  list-style: none;
+}
+
+.footer-links li a {
+  color: #010819;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+  color: #f39c12;
+}
+
+/* Social Media Links */
+.footer-social {
+  margin-top: 20px;
+}
+
+.footer-social a {
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.footer-social img {
+  height: 24px;
+  width: 24px;
+}
+
+.social-icon:hover {
+  color: #f39c12;
+}
+
+/* Contact Info */
+.footer-contact {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.footer-contact p {
+  font-size: 0.9rem;
+}
+
+.footer-contact a {
+  color: #010819;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+  color: #0a3df8;
+}
+
+@media (max-width: 768px) {
   .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+      flex-direction: column;
+      align-items: center;
   }
-  
-  .footer-logo .logo {
-    width: 100px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-text {
-    margin: 10px 0;
-  }
-  
+
   .footer-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
+      flex-direction: column;
+      align-items: center;
   }
-  
-  .footer-links li {
-    display: inline;
-    margin: 0 10px;
+
+  .footer-logo .logo {
+      text-align: center;
   }
-  
-  .footer-links li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
+
+  .footer-social {
+      text-align: center;
   }
-  
-  .footer-links li a:hover {
-    color: #ddd;
+
+  .footer-contact {
+      text-align: center;
   }
-  
-  .footer-social img {
-    margin: 20px 0;
-    height: 24px;
-    width: 24px;
-  }
-  
-  .social-icon {
-    color: #010819;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s;
-  }
-  
-  .social-icon:hover {
-    color: #ddd;
-  }
-  
-  .footer-contact p {
-    margin: 10px 0;
-  }
-  
-  .footer-contact a {
-    color: #010819;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-contact a:hover {
-    color: #0a3df8;
-  }
-  
+}
+
 
   /* Carousel */
   .carousel-container {
@@ -365,14 +446,6 @@ body {
     margin-top: 50px;
 }
 
-/* Error Message Styling */
-.error-message {
-    color: red;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 /* Form Styling */
 .update-profile-form {
     display: flex;
@@ -410,25 +483,6 @@ body {
     border: 1px solid #0a3df8;
     outline: none;
 }
-
-/* Success Message */
-.success-message {
-    color: green;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Success Message Styling (optional) */
-.success-message {
-    background-color: #eaf5e0;
-    color: #0a3df8;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #0a3df8;
-    margin-bottom: 15px;
-}
-
 
 /* Booking Card  */
 
@@ -539,4 +593,61 @@ body {
   font-size: 0.9em;
   color: #444;
   margin-bottom: 15px;
+}
+/***********
+  Banner 
+************/
+.banner {
+  background: linear-gradient(100.26deg, #FFE3C5 0%, #A6EFFF 100%);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 15px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section-title {
+  max-width: 500px;
+}
+
+.section-title h5 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.section-title .content {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.theme-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #010819;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.theme-btn:hover {
+  background-color: #171717;
+}
+
+.banner-image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: cover;
 }
