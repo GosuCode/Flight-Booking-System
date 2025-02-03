@@ -12,7 +12,7 @@ include('actions/register_action.php');
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <?php include '../utils/header.php'; ?><!--header content. file found in utils folder-->
+    <?php include '../includes/header.php'; ?><!--header content. file found in utils folder-->
     
     <div class="form-wrapper">
         <h2 class="register-title">Create Account</h2>
@@ -46,7 +46,7 @@ include('actions/register_action.php');
             <button class="primary-button" type="submit">Register</button>
         </form>
     </div>
-    <?php include '../utils/footer.php'; ?><!--footer content. file found in utils folder-->
+    <?php include '../includes/footer.php'; ?><!--footer content. file found in utils folder-->
 
 </body>
 </html>

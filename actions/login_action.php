@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['success_message'] = "Login successful!";
             
             // Redirect to the homepage
-            header("Location: ../pages/services.php");
+            header("Location: ../index.php");
         } else {
             $_SESSION['error_message'] = "Invalid password!";
             header("Location: ../pages/login.php");

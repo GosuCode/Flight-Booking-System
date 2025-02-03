@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css"> <!-- Assuming you have style.css in the folder -->
 </head>
 <body>
-<?php include '../utils/header.php'; ?><!--header content. file found in utils folder-->
+<?php include '../includes/header.php'; ?><!--header content. file found in utils folder-->
 
     <?php
     session_start();
@@ -71,6 +71,6 @@
     </div>
 
 
-    <?php include '../utils/footer.php'; ?><!--footer content. file found in utils folder-->
+    <?php include '../includes/footer.php'; ?><!--footer content. file found in utils folder-->
 </body>
 </html>

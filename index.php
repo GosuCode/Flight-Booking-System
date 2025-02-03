@@ -7,19 +7,10 @@
         <?php require 'utils/scripts.php'; ?><!--js links. file found in utils folder-->
     </head>
     <body>
-        <?php include 'utils/header.php'; ?><!--header content. file found in utils folder-->
-        <div class="carousel-container">
-        <!-- <div class="carousel">
-            <div class="carousel-images">
-                <img src="/assets/img1.jpg" alt="Image 1" class="carousel-image">
-                <img src="/assets/img2.jpg" alt="Image 2" class="carousel-image">
-                <img src="/assets/img3.jpg" alt="Image 3" class="carousel-image">
-            </div>
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div> -->
-        </div>
+        <?php include 'includes/header.php'; ?><!--header content. file found in utils folder-->
 
-        <?php include 'utils/footer.php'; ?><!--footer content. file found in utils folder-->
+            <?php include 'includes/cards.php'; ?><!--flights cards content. file found in utils folder-->
+        
+        <?php include 'includes/footer.php'; ?><!--footer content. file found in utils folder-->
     </body>
 </html>

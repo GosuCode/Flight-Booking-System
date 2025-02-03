@@ -11,10 +11,10 @@ include('../utils/auth_check.php');  // authentication check file
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <?php include '../utils/header.php'; ?><!--header content. file found in utils folder-->
+    <?php include '../includes/header.php'; ?><!--header content. file found in utils folder-->
     
-    Services
+    <?php include '../includes/cards.php'; ?><!--flights cards content. file found in utils folder-->
     
-    <?php include '../utils/footer.php'; ?><!--footer content. file found in utils folder-->
+    <?php include '../includes/footer.php'; ?><!--footer content. file found in utils folder-->
 </body>
 </html>

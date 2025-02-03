@@ -12,7 +12,7 @@ include('actions/login_action.php'); // Include the login action
     <link rel="stylesheet" href="../css/style.css"> <!-- Assuming you have style.css in utils folder -->
 </head>
 <body>
-<?php include '../utils/header.php'; ?><!--header content. file found in utils folder-->
+<?php include '../includes/header.php'; ?><!--header content. file found in utils folder-->
 
     <div class="form-wrapper">
         <h2 class="login-title">Login</h2>
@@ -42,7 +42,7 @@ include('actions/login_action.php'); // Include the login action
         </form>
         
     </div>
-    <?php include '../utils/footer.php'; ?><!--footer content. file found in utils folder-->
+    <?php include '../includes/footer.php'; ?><!--footer content. file found in utils folder-->
 
 </body>
 </html>
