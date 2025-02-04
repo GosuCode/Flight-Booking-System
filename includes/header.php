@@ -1,16 +1,17 @@
 <nav class="navbar">
     <div class="logo">
-    <h1>
-        <a href="../index.php">Totoro</a>
-        <span>
-            <img src="../assets/logo.svg" alt="Totoro">
-        </span>
-    </h1>
+        <h1>
+            <a href="../index.php">Make My Trip</a>
+            <span>
+                <img src="../assets/logo.svg" alt="Make My Trip">
+            </span>
+        </h1>
     </div>
     <ul class="nav-links">
         <li><a href="../index.php">Home</a></li>
-        <li><a href="../pages/flights.php">flights</a></li>
-        <li><a href="about_us.php">About Us</a></li>
+        <li><a href="../pages/flights.php">Flights</a></li>
+        <li><a href="../pages/book.php">Book</a></li>
+        <li><a href="../pages/about_us.php">About Us</a></li>
         <?php if (isset($_SESSION['username'])): ?>
             <!-- If user is logged in, show the username, Update Profile link, and Logout link -->
             <li>Welcome,</li>

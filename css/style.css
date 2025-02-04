@@ -72,6 +72,8 @@ nav {
 .logo a {
     color: var(--text);
     margin: 0;
+    font-size: smaller;
+    font-family: cursive;
 }
 
 .logo img{
@@ -529,6 +531,32 @@ footer {
   margin-bottom: 15px;
 }
 
+/* Booking Details Section */
+.booking-details {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 880px;
+  margin: 40px auto;
+}
+
+.booking-details p {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.booking-details p strong {
+  color: #007BFF;
+}
+
+.booking-details p.no-booking {
+  color: red;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+
 /***********
   Banner 
 ************/
@@ -811,4 +839,90 @@ footer {
   margin-top: 10px;
   font-size: 0.9em;
   color: #888;
+}
+
+
+/* About US */
+.about-banner {
+  background: url('../assets/icons/banner.png') no-repeat center center/cover;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.about-banner-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.about-banner-content p {
+  font-size: 1.5em;
+}
+
+.about-info {
+  padding: 30px 50px;
+  background-color: #f9f9f9;
+}
+
+.about-info h2 {
+  font-size: 2em;
+  margin: 40px 0;
+}
+
+.about-info .about-text p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.about-info .about-values ul {
+  list-style-type: none;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.about-info .about-values ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  text-align: center;
+  background-color: #eee;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+/* Bookings Table */
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.bookings-table th, .bookings-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.bookings-table th {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+}
+
+.bookings-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.bookings-table tr:hover {
+  background-color: #f1f1f1;
 }

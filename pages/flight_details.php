@@ -77,7 +77,7 @@ $stmt->close();
             <p>Price: USD <?php echo number_format($selected_flight['price'], 2); ?></p>
         </div>
         <div class="booking-info">
-            <a href="book_flight.php?flight_id=<?php echo urlencode($selected_flight['flight_number']); ?>" class="book-now">Book Now</a>
+            <a href="../actions/book_flight.php?flight_id=<?php echo urlencode($selected_flight['flight_number']); ?>" class="book-now">Book Now</a>
         </div>
     </div>
 

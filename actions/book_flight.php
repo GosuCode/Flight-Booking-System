@@ -1,24 +1,25 @@
 <?php
 session_start();
+include('../utils/auth_check.php');
+include('../config.php');  // Include database connection
 
-// Enable error reporting
+// Enable error reporting for debugging
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Check if flight_id is provided
+// Check if a flight ID is passed
 if (!isset($_GET['flight_id']) || empty($_GET['flight_id'])) {
-    $_SESSION['error_message'] = "No flight selected.";
-    header("Location: ../pages/flights.php");
+    echo "No flight selected.";
     exit;
 }
 
 $flight_id = $_GET['flight_id'];
+$user_name = $_SESSION['username'];  // Assuming the user is logged in and username is stored in session
 
-// Load flights data
+// Load flight data from JSON (this part remains the same)
 $json_file = $_SERVER['DOCUMENT_ROOT'] . '/data/flights.json';
 if (!file_exists($json_file)) {
-    $_SESSION['error_message'] = "Flight data not available.";
-    header("Location: ../pages/flights.php");
+    echo "Error: JSON file not found.";
     exit;
 }
 
@@ -26,12 +27,10 @@ $json_data = file_get_contents($json_file);
 $flights = json_decode($json_data, true);
 
 if ($flights === null) {
-    $_SESSION['error_message'] = "Error loading flight data: " . json_last_error_msg();
-    header("Location: ../pages/flights.php");
+    echo "Error decoding JSON: " . json_last_error_msg();
     exit;
 }
 
-// Find the selected flight
 $selected_flight = null;
 foreach ($flights as $flight) {
     if (strcasecmp($flight['flight_number'], $flight_id) == 0) {
@@ -41,15 +40,29 @@ foreach ($flights as $flight) {
 }
 
 if (!$selected_flight) {
-    $_SESSION['error_message'] = "Flight not found.";
-    header("Location: ../pages/flights.php");
+    echo "Flight not found.";
     exit;
 }
 
-// Process booking (Store in session or database as required)
-$_SESSION['booked_flight'] = $selected_flight;
+// Check if the user is logged in before booking
+if (!isset($user_name) || empty($user_name)) {
+    echo "Please log in to book the flight.";
+    exit;
+}
 
-// Redirect to confirmation page
-header("Location: ../pages/confirmation.php");
-exit;
+// Insert the booking details into the database
+$stmt = $conn->prepare("INSERT INTO bookings (user_name, flight_id, booking_date) VALUES (?, ?, NOW())");
+$stmt->bind_param("ss", $user_name, $flight_id);
+
+if ($stmt->execute()) {
+    echo "Flight booked successfully!";
+    header("Location: ../pages/confirmation.php?flight_id=" . urlencode($flight_id));
+    exit;
+} else {
+    echo "Error: " . $stmt->error;
+    exit;
+}
+
+$stmt->close();
+$conn->close();
 ?>

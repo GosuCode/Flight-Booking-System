@@ -4,16 +4,15 @@
     <!-- Logo Section -->
     <div class="logo">
     <h1>
-        <a href="../index.php">Totoro</a>
+        <a href="../index.php">Make My Trip</a>
         <span>
-            <img src="../assets/logo.svg" alt="Totoro">
+            <img src="../assets/logo.svg" alt="Make My Trip">
         </span>
     </h1>
     </div>
     
-    <!-- Text Section -->
     <div class="footer-text">
-      <p>&copy; 2025 Totoro. All rights reserved.</p>
+      <p>&copy; 2025 Make My Trip. All rights reserved.</p>
     </div>
     <!-- Social Media Links -->
     <div class="footer-social">
@@ -33,7 +32,7 @@
 
     <!-- Contact Info -->
     <div class="footer-contact">
-      <p>Contact us at: <a href="mailto:contact@totoro.com">contact@totoro.com</a></p>
+      <p>Contact us at: <a href="mailto:contact@makemytrip.com">contact@makemytrip.com</a></p>
     </div>
     </section>
     <section class="footer-links">
