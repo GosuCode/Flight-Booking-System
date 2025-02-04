@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config.php'); // Adjust path if needed
+include('../config.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = trim($_POST['username']);
@@ -8,12 +8,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
+    // Validate username length
+    if (strlen($username) > 10) {
+        $_SESSION['error_message'] = "Username must not exceed 10 characters!";
+        header("Location: ../pages/register.php");
+        exit();
+    }
+
     // Check for duplicate users
     $stmt = $conn->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
     $stmt->bind_param("ss", $username, $email);
     $stmt->execute();
     $stmt->store_result();
-    echo "Hello";
 
     if ($stmt->num_rows > 0) {
         $_SESSION['error_message'] = "User already exists!";

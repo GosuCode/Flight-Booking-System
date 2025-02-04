@@ -51,8 +51,7 @@ if (!isset($flights) || !is_array($flights)) {
                     Airline: <?php echo htmlspecialchars($flight['airline']); ?><br>
                     Duration: <?php echo htmlspecialchars($flight['duration']); ?>
                 </div>
-                <a href="#" class="book-btn">BOOK NOW</a>
-            </div>
+                <a href="../pages/flight_details.php?flight_id=<?php echo urlencode($flight['flight_number']); ?>" class="book-btn">BOOK NOW</a>            </div>
         </div>
     <?php } ?>
 </div>

@@ -13,6 +13,8 @@ include('../utils/auth_check.php');  // authentication check file
 <body>
     <?php include '../includes/header.php'; ?><!--header content. file found in utils folder-->
     
+    <h1>Book Flights</h1>
+    <p style="text-align: center; text-">Select the flights you wanna take.</p>
     <?php include '../includes/cards.php'; ?><!--flights cards content. file found in utils folder-->
     
     <?php include '../includes/footer.php'; ?><!--footer content. file found in utils folder-->

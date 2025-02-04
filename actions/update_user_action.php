@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config.php');  // Include the database configuration
+include('../config.php');  // Includes the database configuration
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if user is logged in
@@ -16,19 +16,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
 
+        // Check if username exceeds 10 characters
+        if (strlen($username) > 10) {
+            $_SESSION['error_message'] = "Username must not exceed 10 characters!";
+            header("Location: ../pages/update_user.php");
+            exit();
+        }
+
+        // Check if the username or email already exists (excluding the current user)
+        $stmt = $conn->prepare("SELECT id FROM users WHERE (username = ? OR email = ?) AND id != ?");
+        $stmt->bind_param("ssi", $username, $email, $user_id);
+        $stmt->execute();
+        $stmt->store_result();
+        
+        if ($stmt->num_rows > 0) {
+            $_SESSION['error_message'] = "Username already exists!";
+            header("Location: ../pages/update_user.php");
+            exit();
+        }
+
         // Prepare SQL to update the user information
         $stmt = $conn->prepare("UPDATE users SET username = ?, email = ? WHERE id = ?");
         $stmt->bind_param("ssi", $username, $email, $user_id);
 
         if ($stmt->execute()) {
             $_SESSION['success_message'] = "Your information has been updated successfully!";
-            header("Location: ../pages/update_user.php");
         } else {
             $_SESSION['error_message'] = "Failed to update your information!";
-            header("Location: ../pages/update_user.php");
         }
 
         $stmt->close();
+        header("Location: ../pages/update_user.php");
+        exit();
     } else {
         $_SESSION['error_message'] = "You need to be logged in to update your profile.";
         header("Location: ../pages/login.php");
