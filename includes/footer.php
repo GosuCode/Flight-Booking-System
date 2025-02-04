@@ -13,7 +13,7 @@
     
     <!-- Text Section -->
     <div class="footer-text">
-      <p>&copy; 2025 Your Totoro. All rights reserved.</p>
+      <p>&copy; 2025 Totoro. All rights reserved.</p>
     </div>
     <!-- Social Media Links -->
     <div class="footer-social">

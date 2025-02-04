@@ -3,55 +3,58 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Ensure we have the data
-if (!isset($flights) || !is_array($flights)) {
-    $json_file = $_SERVER['DOCUMENT_ROOT'] . '/data/flights.json';  // Absolute path
-    
-    // Check if file exists
-    if (!file_exists($json_file)) {
-        echo "Error: JSON file not found at: " . $json_file;
-        return;
-    }
+// Load flight data
+$json_file = $_SERVER['DOCUMENT_ROOT'] . '/data/flights.json';
+$flights = [];
 
-    // Try to read the file
+if (file_exists($json_file)) {
     $json_data = file_get_contents($json_file);
-    if ($json_data === false) {
-        echo "Error: Unable to read JSON file";
-        return;
-    }
-
-    // Try to decode the JSON
     $flights = json_decode($json_data, true);
-    if ($flights === null) {
-        echo "Error loading flight data: " . json_last_error_msg();
-        echo "<br>Raw JSON data:<br>";
-        echo htmlspecialchars($json_data);
-        return;
-    }
+}
+
+// Get filter values from GET request
+$from = isset($_GET['from']) ? $_GET['from'] : '';
+$to = isset($_GET['to']) ? $_GET['to'] : '';
+
+// Apply filters if set
+if (!empty($from)) {
+    $flights = array_filter($flights, function ($flight) use ($from) {
+        return $flight['departure_airport'] === $from;
+    });
+}
+
+if (!empty($to)) {
+    $flights = array_filter($flights, function ($flight) use ($to) {
+        return $flight['arrival_airport'] === $to;
+    });
 }
 ?>
 
-
 <div class="flights-grid">
-    <?php foreach ($flights as $flight) { ?>
-        <div class="card">
-            <img src="../assets/flights/<?php echo htmlspecialchars($flight['img']); ?>" alt="Flight">
-            <div class="card-content">
-                <div class="flight-route">
-                    <?php echo htmlspecialchars($flight['departure_airport']); ?> to 
-                    <?php echo htmlspecialchars($flight['arrival_airport']); ?>
+    <?php if (empty($flights)) { ?>
+        <p>No flights found for the selected route.</p>
+    <?php } else { ?>
+        <?php foreach ($flights as $flight) { ?>
+            <div class="card">
+                <img src="../assets/flights/<?php echo htmlspecialchars($flight['img']); ?>" alt="Flight">
+                <div class="card-content">
+                    <div class="flight-route">
+                        <?php echo htmlspecialchars($flight['departure_airport']); ?> to 
+                        <?php echo htmlspecialchars($flight['arrival_airport']); ?>
+                    </div>
+                    <div class="flight-date">
+                        <?php echo date("d M y (D)", strtotime($flight['departure_time'])); ?> -
+                        <?php echo date("d M y (D)", strtotime($flight['arrival_time'])); ?>
+                    </div>
+                    <div class="price">USD <?php echo number_format($flight['price'], 2); ?>*</div>
+                    <div class="details">
+                        Flight: <?php echo htmlspecialchars($flight['flight_number']); ?><br>
+                        Airline: <?php echo htmlspecialchars($flight['airline']); ?><br>
+                        Duration: <?php echo htmlspecialchars($flight['duration']); ?>
+                    </div>
+                    <a href="../pages/flight_details.php?flight_id=<?php echo urlencode($flight['flight_number']); ?>" class="book-btn">BOOK NOW</a>
                 </div>
-                <div class="flight-date">
-                    <?php echo date("d M y (D)", strtotime($flight['departure_time'])); ?> -
-                    <?php echo date("d M y (D)", strtotime($flight['arrival_time'])); ?>
-                </div>
-                <div class="price">USD <?php echo number_format($flight['price'], 2); ?>*</div>
-                <div class="details">
-                    Flight: <?php echo htmlspecialchars($flight['flight_number']); ?><br>
-                    Airline: <?php echo htmlspecialchars($flight['airline']); ?><br>
-                    Duration: <?php echo htmlspecialchars($flight['duration']); ?>
-                </div>
-                <a href="../pages/flight_details.php?flight_id=<?php echo urlencode($flight['flight_number']); ?>" class="book-btn">BOOK NOW</a>            </div>
-        </div>
+            </div>
+        <?php } ?>
     <?php } ?>
 </div>

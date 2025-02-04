@@ -1,15 +1,17 @@
-/* --text: #010819;
---background: #edf1ff;
---primary: #0a3df8;
---secondary: #fb6be7;
---accent: #fa3c8f; */
 
+:root {
+  --text: #010819;
+  --background: #edf1ff;
+  --primary: #0a3df8;
+  --secondary: #fb6be7;
+  --accent: #fa3c8f;
+}
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #010819;
-    background-color: #edf1ff;
+    color: var(--text);
+    background-color: var(--background);
 }
 h1,
 h2{
@@ -26,7 +28,7 @@ a {
   }
 
 .primary-button {
-    background-color: #0a3df8;
+    background-color: var(--primary);
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -61,13 +63,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #edf1ff;
+    background: #e1e5f3;
     padding: 0 20px;
     border-radius: 8px;
+    margin: 12px 24px;
 }
 
 .logo a {
-    color: #010819;
+    color: var(--text);
     margin: 0;
 }
 
@@ -93,7 +96,7 @@ nav {
 }
 
 .nav-links a {
-    color: #010819;
+    color: var(--text);
     text-decoration: none;
     font-size: 16px;
 }
@@ -215,8 +218,6 @@ nav {
     border-radius: 5px;
 }
 
-
-/* Responsive Design */
 @media (max-width: 600px) {
     .register-wrapper {
         padding: 15px;
@@ -224,12 +225,10 @@ nav {
     }
 }
 
-
-
 /* Footer Styles */
 footer {
   background-color: #e1e5f3;
-  color: #010819;
+  color: var(--text);
   padding: 40px 0;
   border-radius: 12px;
   text-align: center;
@@ -295,7 +294,7 @@ footer {
 }
 
 .footer-links li a {
-  color: #010819;
+  color: var(--text);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s;
@@ -336,13 +335,13 @@ footer {
 }
 
 .footer-contact a {
-  color: #010819;
+  color: var(--text);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-contact a:hover {
-  color: #0a3df8;
+  color: var(--primary);
 }
 
 @media (max-width: 768px) {
@@ -369,75 +368,14 @@ footer {
   }
 }
 
+/* Update form */
 
-  /* Carousel */
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.carousel {
-    position: relative;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-images {
-    display: flex;
-}
-
-.carousel-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    flex-shrink: 0;
-    display: block;
-}
-
-.carousel button {
-    position: absolute;
-    top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 30px;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    transform: translateY(-50%);
-}
-
-.carousel button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-
-/* General Body Styling */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    padding: 20px;
-}
-
-/* Page Title */
 .page-title {
     color: #333;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Profile Update Container */
 .profile-update-container {
     display: flex;
     flex-direction: column;
@@ -446,7 +384,6 @@ body {
     margin-top: 50px;
 }
 
-/* Form Styling */
 .update-profile-form {
     display: flex;
     flex-direction: column;
@@ -480,7 +417,7 @@ body {
 }
 
 .update-profile-form .form-input:focus {
-    border: 1px solid #0a3df8;
+    border: 1px solid var(--primary);
     outline: none;
 }
 
@@ -515,7 +452,7 @@ body {
   margin-bottom: 15px;
 }
 .book-btn {
-  background: #0a3df8;
+  background: var(--primary);
   color: white;
   padding: 10px;
   display: block;
@@ -528,8 +465,6 @@ body {
   background: #0635e0;
 }
 
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .update-profile-form {
         padding: 20px;
@@ -539,7 +474,6 @@ body {
         font-size: 14px;
     }
 }
-
 
 .flights-grid {
   display: grid;
@@ -594,6 +528,7 @@ body {
   color: #444;
   margin-bottom: 15px;
 }
+
 /***********
   Banner 
 ************/
@@ -634,7 +569,7 @@ body {
 .theme-btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #010819;
+  background-color: var(--text);
   color: #fff;
   text-decoration: none;
   margin-top: 20px;
@@ -705,9 +640,68 @@ body {
   background-color: #007bff;
   border-radius: 5px;
   text-decoration: none;
-  transition: background 0.3s ease;
 }
 
 .book-now:hover {
   background-color: #0056b3;
+}
+
+/* Filter flights */
+
+.page-subtitle{
+  text-align: center;
+}
+
+.flight-filter-container {
+  background: var(--accent);
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+.filter-select {
+  width: 250px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  color: blac;
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+  text-align: center;
+  outline: none;
+}
+
+.filter-select option {
+  color: black;
+  background: white;
+}
+
+.filter-icon img {
+  width: 16px;
+  background: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
 }
