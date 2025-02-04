@@ -61,7 +61,7 @@ a {
 /* Navbar Styling */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background: #e1e5f3;
     padding: 0 20px;
@@ -704,4 +704,111 @@ footer {
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
+}
+
+/* Feedback Section */
+.feedback-section {
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.feedback-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Feedback Form */
+.feedback-section form {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%; 
+  margin: 0 auto; 
+}
+
+.feedback-section form label {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #444;
+}
+
+.feedback-section form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.feedback-section form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.feedback-section form .primary-button {
+  padding: 12px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-section form .primary-button:hover {
+  background-color: #1847f2;
+}
+
+/* Feedback List */
+.feedback-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+  width: 100%; 
+}
+
+.feedback-item {
+  margin-bottom: 20px;
+  width: 100%; 
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item strong {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.feedback-item p {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #555;
+}
+
+.feedback-item small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #888;
 }
