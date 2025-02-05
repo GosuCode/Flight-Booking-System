@@ -15,7 +15,7 @@ if (!isset($_GET['flight_id']) || empty($_GET['flight_id'])) {
 
 $flight_id = $_GET['flight_id'];
 
-// Load flight data from JSON (this part remains the same)
+// Load flight data from JSON
 $json_file = $_SERVER['DOCUMENT_ROOT'] . '/data/flights.json';
 if (!file_exists($json_file)) {
     echo "Error: JSON file not found.";

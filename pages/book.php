@@ -10,7 +10,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 
 $user_name = $_SESSION['username'];
 
-// Fetch user bookings (only booking_id and flight_id from DB)
+// Fetch user bookings
 $stmt = $conn->prepare("SELECT booking_id, flight_id FROM bookings WHERE user_name = ?");
 $stmt->bind_param("s", $user_name);
 $stmt->execute();
@@ -29,8 +29,6 @@ if ($flights === null) {
     echo "Error decoding JSON: " . json_last_error_msg();
     exit;
 }
-
-// HTML Structure
 ?>
 <!DOCTYPE html>
 <html lang="en">

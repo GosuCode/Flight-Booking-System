@@ -1,7 +1,7 @@
 <?php
 include('../config.php');
 
-// Check if user is logged in (session exists)
+// Check if user is logged in
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
     echo "Please log in to submit feedback.";
     exit;

@@ -9,7 +9,7 @@ include('actions/login_action.php'); // Include the login action
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../css/style.css"> <!-- Assuming you have style.css in utils folder -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <?php include '../includes/header.php'; ?><!--header content. file found in utils folder-->

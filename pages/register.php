@@ -21,7 +21,7 @@ include('actions/register_action.php');
         <?php
         if (isset($_SESSION['error_message'])) {
             echo "<p class='error-message'>" . $_SESSION['error_message'] . "</p>";
-            unset($_SESSION['error_message']); // Remove after displaying
+            unset($_SESSION['error_message']);
         }
         if (isset($_SESSION['success_message'])) {
             echo "<p class='success-message'>" . $_SESSION['success_message'] . "</p>";

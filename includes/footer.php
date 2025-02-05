@@ -30,7 +30,7 @@
       </a>
     </div>
 
-    <!-- Contact Info -->
+    <!-- Contacts info and important links -->
     <div class="footer-contact">
       <p>Contact us at: <a href="mailto:contact@makemytrip.com">contact@makemytrip.com</a></p>
     </div>

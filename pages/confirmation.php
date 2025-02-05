@@ -2,7 +2,7 @@
 session_start();
 include('../config.php');  // Include database connection
 
-// Ensure user is logged in
+// Ensures user is logged in
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
     echo "You need to log in to view the booking details.";
     exit;

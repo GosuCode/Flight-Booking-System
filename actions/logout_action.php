@@ -5,7 +5,7 @@ session_start();
 session_unset();
 session_destroy();
 
-// Redirect to the login page after logging out
+// Redirect to the home page after logging out
 header("Location: ../index.php");
 exit();
 ?>

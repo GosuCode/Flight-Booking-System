@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('../utils/auth_check.php');
-include('../config.php');  // Include database connection
+include('../utils/auth_check.php'); // Checks 
+include('../config.php');  // Includes database connection
 
 // Enable error reporting for debugging
 ini_set('display_errors', 1);
@@ -14,9 +14,9 @@ if (!isset($_GET['flight_id']) || empty($_GET['flight_id'])) {
 }
 
 $flight_id = $_GET['flight_id'];
-$user_name = $_SESSION['username'];  // Assuming the user is logged in and username is stored in session
+$user_name = $_SESSION['username'];
 
-// Load flight data from JSON (this part remains the same)
+// Load flight data from JSON
 $json_file = $_SERVER['DOCUMENT_ROOT'] . '/data/flights.json';
 if (!file_exists($json_file)) {
     echo "Error: JSON file not found.";

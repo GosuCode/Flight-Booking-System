@@ -10,10 +10,10 @@
     <ul class="nav-links">
         <li><a href="../index.php">Home</a></li>
         <li><a href="../pages/flights.php">Flights</a></li>
-        <li><a href="../pages/book.php">Book</a></li>
+        <li><a href="../pages/book.php">Bookings</a></li>
         <li><a href="../pages/about_us.php">About Us</a></li>
         <?php if (isset($_SESSION['username'])): ?>
-            <!-- If user is logged in, show the username, Update Profile link, and Logout link -->
+            <!-- If user is logged in, show these -->
             <li>Welcome,</li>
             <div class="dropdown">
                 <button><?php echo htmlspecialchars($_SESSION['username']); ?></button>
@@ -23,7 +23,7 @@
                 </div>
             </div>
         <?php else: ?>
-            <!-- If user is not logged in, show Login and Register links -->
+            <!-- If user is not logged in, show Login -->
             <li><a href="../pages/login.php" class="login">
                 <button class="secondary-button">Login</button>
             </a></li>
